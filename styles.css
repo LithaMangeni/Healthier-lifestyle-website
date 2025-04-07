@@ -1,0 +1,604 @@
+   /* ===== Brand Variables ===== */
+   :root {
+    /* Colors */
+    --peach-pop: #FFC7A6;
+    --mint-fresh: #B7E4C7;
+    --blueberry-calm: #B0C4DE;
+    --lemon-lite: #FFF5BA;
+    --lazy-cream: #FFFDF9;
+    --charcoal: #333333;
+    --soft-gray: #888888;
+    --soft-red: #FF6B6B;
+    
+    /* Typography */
+    --display-font: 'Poppins', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lazy-cream);
+    color: var(--charcoal);
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+  
+  .logo .lazy {
+    color: rgba(255,201,170,255); /* dark neutral */
+  }
+  
+  .logo .fit {
+    color:rgba(183,228,199,255); /* vibrant highlight */
+  }
+  
+  .logo .living {
+    color: #000000; /* calm wellness green */
+  }
+  
+.hero-heading {
+    display: flex;
+    gap: 0.5rem; /* space between the words */
+    align-items: baseline;
+    justify-content: center; /* optional: center on the page */
+    flex-wrap: wrap; /* ensures it stacks on small screens */
+  }
+  
+  .hero-heading h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .full-life {
+    color: rgba(255,199,166,255); /* optional different color */
+  }
+  
+h1, h2, h3, h4 {
+    font-family: var(--display-font);
+}
+
+/* ===== Navigation ===== */
+nav {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--peach-pop);
+}
+
+.nav-links a.active {
+    color: var(--peach-pop);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--peach-pop);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--soft-gray);
+    position: relative;
+    z-index: 2;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--peach-pop);
+    color: var(--charcoal);
+    box-shadow: 0 4px 15px rgba(255, 199, 166, 0.4);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--charcoal);
+    border: 1px solid var(--blueberry-calm);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 199, 166, 0.6);
+}
+
+.btn-secondary:hover {
+    background-color: var(--blueberry-calm);
+    color: white;
+}
+
+/* ===== Colorful Balls ===== */
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 15s infinite ease-in-out;
+    z-index: 1;
+}
+
+.ball-1 {
+    width: 120px;
+    height: 120px;
+    background-color: var(--peach-pop);
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.ball-2 {
+    width: 80px;
+    height: 80px;
+    background-color: var(--mint-fresh);
+    top: 30%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.ball-3 {
+    width: 60px;
+    height: 60px;
+    background-color: var(--blueberry-calm);
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.ball-4 {
+    width: 100px;
+    height: 100px;
+    background-color: var(--lemon-lite);
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* ===== How It Works Section ===== */
+.how-it-works {
+    background-color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--charcoal);
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: var(--lazy-cream);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.step-1 .step-icon {
+    background-color: var(--peach-pop);
+}
+
+.step-2 .step-icon {
+    background-color: var(--mint-fresh);
+}
+
+.step-3 .step-icon {
+    background-color: var(--blueberry-calm);
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+}
+
+.step p {
+    color: var(--soft-gray);
+    font-size: 1rem;
+}
+
+/* ===== Weekly Habits Section ===== */
+.weekly-habits {
+    background-color: var(--lazy-cream);
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.weekly-habits h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--charcoal);
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.habit-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.habit-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.habit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+}
+
+.habit-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--peach-pop);
+}
+
+.habit-card p {
+    font-size: 0.95rem;
+    color: var(--soft-gray);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    min-width: 80px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--peach-pop);
+}
+
+.progress-percent {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    min-width: 50px;
+    text-align: right;
+}
+
+.details-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.details-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    min-width: 80px;
+}
+
+.details-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--mint-fresh);
+    color: var(--charcoal);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: var(--blueberry-calm);
+    color: white;
+}
+
+/* ===== Featured Recipes Section ===== */
+.featured-recipes {
+    background-color: white;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured-recipes h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+.recipe-categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--mint-fresh);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.recipe-card {
+    background-color: var(--lazy-cream);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+}
+
+.recipe-meal-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--peach-pop);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.recipe-difficulty {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--lemon-lite);
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-top: 0.5rem;
+}
+
+.recipe-time {
+    font-size: 0.9rem;
+    color: var(--soft-gray);
+    margin-top: 0.5rem;
+}
+
+/* ===== Daily Motivation Section ===== */
+.daily-motivation {
+    background-color: var(--lazy-cream);
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.daily-motivation h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+.motivation-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.motivation-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.motivation-card::before {
+    content: '"';
+    font-family: var(--display-font);
+    font-size: 5rem;
+    color: var(--peach-pop);
+    opacity: 0.2;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    line-height: 1;
+}
+
+.motivation-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.motivation-author {
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.motivation-tip {
+    font-size: 0.9rem;
+    color: var(--peach-pop);
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* ===== Habit Icons ===== */
+.habit-icon {
+    background-color: var(--mint-fresh);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Success Badge ===== */
+.badge {
+    background-color: var(--lemon-lite);
+    color: var(--charcoal);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}

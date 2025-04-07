@@ -39,11 +39,11 @@ body {
     align-items: center;
   }
   
-  .logo .lazy {
+  .logo-lazy {
     color: rgba(255,201,170,255); /* dark neutral */
   }
   
-  .logo .fit {
+  .logo-fit {
     color:rgba(183,228,199,255); /* vibrant highlight */
   }
   
